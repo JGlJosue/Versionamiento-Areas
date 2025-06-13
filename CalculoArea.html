@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Versión 2 - Área del Triángulo</title>
+  <title>Versión 3 - Área del Rectángulo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -39,21 +39,21 @@
 </head>
 <body>
   <div class="container">
-    <h2>Área del Triángulo</h2>
-    <input type="number" id="base" placeholder="Ingrese la base del triángulo">
-    <input type="number" id="altura" placeholder="Ingrese la altura del triángulo">
-    <button onclick="calcularTriangulo()">Calcular Área</button>
+    <h2>Área del Rectángulo</h2>
+    <input type="number" id="base" placeholder="Ingrese la base del rectángulo">
+    <input type="number" id="altura" placeholder="Ingrese la altura del rectángulo">
+    <button onclick="calcularRectangulo()">Calcular Área</button>
     <div id="resultado"></div>
   </div>
   <script>
-    function calcularTriangulo() {
+    function calcularRectangulo() {
       const base = parseFloat(document.getElementById("base").value);
       const altura = parseFloat(document.getElementById("altura").value);
       if (isNaN(base) || base <= 0 || isNaN(altura) || altura <= 0) {
         document.getElementById("resultado").innerText = "Ingrese valores válidos para base y altura.";
         return;
       }
-      const area = (base * altura) / 2;
+      const area = base * altura;
       document.getElementById("resultado").innerText = "Área: " + area;
     }
   </script>
