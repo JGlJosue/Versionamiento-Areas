@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Versión 2 - Área del Triángulo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+    }
+    #resultado {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Área del Triángulo</h2>
+    <input type="number" id="base" placeholder="Ingrese la base del triángulo">
+    <input type="number" id="altura" placeholder="Ingrese la altura del triángulo">
+    <button onclick="calcularTriangulo()">Calcular Área</button>
+    <div id="resultado"></div>
+  </div>
+  <script>
+    function calcularTriangulo() {
+      const base = parseFloat(document.getElementById("base").value);
+      const altura = parseFloat(document.getElementById("altura").value);
+      if (isNaN(base) || base <= 0 || isNaN(altura) || altura <= 0) {
+        document.getElementById("resultado").innerText = "Ingrese valores válidos para base y altura.";
+        return;
+      }
+      const area = (base * altura) / 2;
+      document.getElementById("resultado").innerText = "Área: " + area;
+    }
+  </script>
+</body>
+</html>
